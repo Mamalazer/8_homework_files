@@ -1,0 +1,40 @@
+plugins {
+    id 'java-library'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+compileJava {
+    options.encoding = "UTF-8"
+}
+
+compileTestJava {
+    options.encoding = "UTF-8"
+}
+
+dependencies {
+    testImplementation(
+            'org.junit.jupiter:junit-jupiter:5.9.0',
+    )
+
+    testRuntimeOnly(
+            'org.slf4j:slf4j-simple:2.0.3'
+    )
+
+    testCompileOnly (
+            'org.projectlombok:lombok:1.18.24'
+    )
+
+    testAnnotationProcessor (
+            'org.projectlombok:lombok:1.18.24'
+    )
+}
+
+test {
+    useJUnitPlatform()
+}
